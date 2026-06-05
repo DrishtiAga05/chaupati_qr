@@ -1,68 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sharma Chaupati Menu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GULABI CHOWK Menu</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            background: #f5f5f5;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
 
-        h1 {
-            text-align: center;
-        }
+body{
+    background:#fff5f8;
+    padding:20px;
+}
 
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px;
-            margin: 8px 0;
-            background: white;
-            border-radius: 8px;
-        }
+.container{
+    max-width:700px;
+    margin:auto;
+}
 
-        .phone {
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
+.header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo{
+    width:140px;
+    height:140px;
+    object-fit:contain;
+    border-radius:50%;
+    background:white;
+    padding:8px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+h1{
+    margin-top:15px;
+    color:#e91e63;
+    letter-spacing:2px;
+    font-size:2rem;
+}
+
+.tagline{
+    color:#666;
+    margin-top:5px;
+}
+
+.category{
+    margin-top:25px;
+}
+
+.category h2{
+    color:#e91e63;
+    margin-bottom:10px;
+    border-bottom:2px solid #ffc0cb;
+    padding-bottom:5px;
+}
+
+.menu-item{
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 18px;
+    margin-bottom:10px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    border-left:5px solid #e91e63;
+}
+
+.item-name{
+    font-weight:600;
+}
+
+.price{
+    color:#e91e63;
+    font-weight:bold;
+}
+
+.contact{
+    margin-top:30px;
+    text-align:center;
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.footer{
+    margin-top:20px;
+    text-align:center;
+    color:#777;
+    font-size:14px;
+}
+</style>
 </head>
+
 <body>
 
-<h1>🍔 Sharma Chaupati</h1>
+<div class="container">
 
-<div class="menu-item">
-    <span>Pav Bhaji</span>
-    <span>₹80</span>
-</div>
+    <div class="header">
+        <img src="logo.jpeg" alt="GULABI CHOWK Logo" class="logo">
+        <h1>GULABI CHOWK</h1>
+        <p class="tagline">Fresh • Tasty • Affordable</p>
+    </div>
 
-<div class="menu-item">
-    <span>Cheese Pav Bhaji</span>
-    <span>₹120</span>
-</div>
+    <div class="category">
+        <h2>🍔 Fast Food</h2>
 
-<div class="menu-item">
-    <span>Vada Pav</span>
-    <span>₹25</span>
-</div>
+        <div class="menu-item">
+            <span class="item-name">Pav Bhaji</span>
+            <span class="price">₹80</span>
+        </div>
 
-<div class="menu-item">
-    <span>Dabeli</span>
-    <span>₹30</span>
-</div>
+        <div class="menu-item">
+            <span class="item-name">Cheese Pav Bhaji</span>
+            <span class="price">₹120</span>
+        </div>
 
-<div class="menu-item">
-    <span>Cold Drink</span>
-    <span>₹20</span>
-</div>
+        <div class="menu-item">
+            <span class="item-name">Vada Pav</span>
+            <span class="price">₹25</span>
+        </div>
 
-<div class="phone">
-    📞 Contact: 1234567890
+        <div class="menu-item">
+            <span class="item-name">Dabeli</span>
+            <span class="price">₹30</span>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>🥤 Beverages</h2>
+
+        <div class="menu-item">
+            <span class="item-name">Cold Drink</span>
+            <span class="price">₹20</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="item-name">Mineral Water</span>
+            <span class="price">₹20</span>
+        </div>
+    </div>
+
+    <div class="contact">
+        <h3>📞 Contact Us</h3>
+        <p>+91 XXXXXXXXXX</p>
+    </div>
+
+    <div class="footer">
+        Thank you for visiting GULABI CHOWK ❤️
+    </div>
+
 </div>
 
 </body>
