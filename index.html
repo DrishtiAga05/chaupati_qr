@@ -3,84 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>गुलाबी CHOWK Menu</title>
+<title>Pandit Pav Bhaji | Gulabi Chowk</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
-    background:#fff5f8;
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.88),
+            rgba(255,255,255,0.88)
+        ),
+        url('background.jpeg');
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
     padding:20px;
 }
+
+/* Main Container */
 
 .container{
     max-width:700px;
     margin:auto;
 }
 
-.header{
-    text-align:center;
-    margin-bottom:15px;
+/* Top Header */
+
+.top-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:30px;
 }
 
-.logo{
-    width:140px;
-    height:140px;
+.gulabi-logo{
+    width:90px;
+    height:90px;
     object-fit:contain;
-    border-radius:50%;
-    background:white;
-    padding:8px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
 }
 
-h1{
-    margin-top:15px;
-    color:#e91e63;
-    letter-spacing:2px;
-    font-size:2rem;
+.choice-section{
+    text-align:center;
 }
 
-/* Featured Stall Section */
+.chatokda-logo{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+}
+
+/* Speech Cloud */
+
+.cloud{
+    position:relative;
+    background:#fff8dc;
+    border:2px solid #ffd700;
+    padding:10px 16px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    margin-top:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+
+.cloud::after{
+    content:"";
+    position:absolute;
+    top:-8px;
+    left:22px;
+    width:16px;
+    height:16px;
+    background:#fff8dc;
+    border-left:2px solid #ffd700;
+    border-top:2px solid #ffd700;
+    transform:rotate(45deg);
+}
+
+/* Stall Title */
+
 .stall-title{
     text-align:center;
-    margin:10px 0 30px;
+    margin-bottom:35px;
 }
 
 .stall-title span{
-    display:block;
-    color:#888;
-    font-size:0.85rem;
+    color:#666;
+    font-size:0.9rem;
     text-transform:uppercase;
     letter-spacing:3px;
-    margin-bottom:5px;
 }
 
-.stall-title h2{
+.stall-title h1{
     color:#e91e63;
-    font-size:2rem;
-    font-weight:700;
+    font-size:2.4rem;
+    margin-top:10px;
+    letter-spacing:2px;
+    text-shadow:1px 1px 4px rgba(0,0,0,0.15);
 }
 
 /* Categories */
+
 .category{
     margin-top:25px;
 }
 
 .category h2{
     color:#e91e63;
-    margin-bottom:10px;
+    margin-bottom:12px;
     border-bottom:2px solid #ffc0cb;
-    padding-bottom:5px;
+    padding-bottom:6px;
 }
 
-/* Menu Items */
+/* Menu Cards */
+
 .menu-item{
-    background:white;
+    background:rgba(255,255,255,0.92);
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -100,22 +145,40 @@ h1{
     font-weight:bold;
 }
 
-/* Contact Section */
+/* Contact */
+
 .contact{
     margin-top:30px;
     text-align:center;
-    background:white;
+    background:rgba(255,255,255,0.92);
     padding:15px;
     border-radius:12px;
     box-shadow:0 2px 8px rgba(0,0,0,0.08);
 }
 
 /* Footer */
+
 .footer{
     margin-top:20px;
     text-align:center;
-    color:#777;
+    color:#666;
     font-size:14px;
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .gulabi-logo,
+    .chatokda-logo{
+        width:70px;
+        height:70px;
+    }
+
+    .stall-title h1{
+        font-size:1.9rem;
+    }
+
 }
 </style>
 </head>
@@ -124,17 +187,39 @@ h1{
 
 <div class="container">
 
-    <div class="header">
-        <img src="logo.jpeg" alt="GULABI CHOWK Logo" class="logo">
-        <h1>गुलाबी CHOWK</h1>
+    <!-- Top Logos -->
+
+    <div class="top-bar">
+
+        <img src="gulabi-logo.jpeg"
+             alt="Gulabi Chowk"
+             class="gulabi-logo">
+
+        <div class="choice-section">
+
+            <img src="chatokda-logo.jpeg"
+                 alt="Chatokda"
+                 class="chatokda-logo">
+
+            <div class="cloud">
+                🌟 Chatokda's Choice
+            </div>
+
+        </div>
+
     </div>
+
+    <!-- Stall Name -->
 
     <div class="stall-title">
         <span>Featured Stall</span>
-        <h2>🍽️ PANDIT PAV BHAJI</h2>
+        <h1>🍽️ PANDIT PAV BHAJI</h1>
     </div>
 
+    <!-- Fast Food -->
+
     <div class="category">
+
         <h2>🍔 Fast Food</h2>
 
         <div class="menu-item">
@@ -156,9 +241,13 @@ h1{
             <span class="item-name">Dabeli</span>
             <span class="price">₹30</span>
         </div>
+
     </div>
 
+    <!-- Beverages -->
+
     <div class="category">
+
         <h2>🥤 Beverages</h2>
 
         <div class="menu-item">
@@ -170,15 +259,20 @@ h1{
             <span class="item-name">Mineral Water</span>
             <span class="price">₹20</span>
         </div>
+
     </div>
+
+    <!-- Contact -->
 
     <div class="contact">
         <h3>📞 Contact Us</h3>
         <p>+91 XXXXXXXXXX</p>
     </div>
 
+    <!-- Footer -->
+
     <div class="footer">
-        Thank you for visiting गुलाबी CHOWK ❤️
+        Thank you for visiting Gulabi Chowk ❤️
     </div>
 
 </div>
