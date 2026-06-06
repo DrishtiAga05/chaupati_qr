@@ -98,15 +98,47 @@ body{
 
 /* Categories */
 
-.category{
-    margin-top:25px;
+.accordion{
+    margin-top:15px;
 }
 
-.category h2{
+.accordion-header{
+    width:100%;
+
+    background:rgba(255,255,255,0.95);
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:15px 18px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    cursor:pointer;
+
+    font-size:1.2rem;
+    font-weight:bold;
+
     color:#e91e63;
-    margin-bottom:12px;
-    border-bottom:2px solid #ffc0cb;
-    padding-bottom:6px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.accordion-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.35s ease;
+}
+
+.arrow{
+    transition:transform 0.35s ease;
+}
+
+.accordion.active .arrow{
+    transform:rotate(180deg);
 }
 
 /* Menu Cards */
@@ -170,6 +202,56 @@ body{
 </style>
 </head>
 
+<script>
+
+const accordions =
+document.querySelectorAll('.accordion');
+
+accordions.forEach(acc => {
+
+    const header =
+    acc.querySelector('.accordion-header');
+
+    const content =
+    acc.querySelector('.accordion-content');
+
+    header.addEventListener('click', () => {
+
+        document
+            .querySelectorAll('.accordion')
+            .forEach(other => {
+
+                if(other !== acc){
+
+                    other.classList.remove('active');
+
+                    other.querySelector(
+                        '.accordion-content'
+                    ).style.maxHeight = null;
+
+                }
+
+            });
+
+        acc.classList.toggle('active');
+
+        if(acc.classList.contains('active')){
+
+            content.style.maxHeight =
+                content.scrollHeight + 'px';
+
+        }else{
+
+            content.style.maxHeight = null;
+
+        }
+
+    });
+
+});
+
+</script>
+
 <body>
 
 <div class="container">
@@ -204,50 +286,62 @@ body{
 
     <!-- Fast Food -->
 
-    <div class="category">
+    <div class="accordion">
 
-        <h2>🍔 Fast Food</h2>
+        <button class="accordion-header">
+            <span>🍔 Fast Food</span>
+            <span class="arrow">▼</span>
+        </button>
 
-        <div class="menu-item">
-            <span class="item-name">Pav Bhaji</span>
-            <span class="price">₹80</span>
+        <div class="accordion-content">
+
+            <div class="menu-item">
+                <span class="item-name">Pav Bhaji</span>
+                <span class="price">₹80</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Cheese Pav Bhaji</span>
+                <span class="price">₹120</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Vada Pav</span>
+                <span class="price">₹25</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Dabeli</span>
+                <span class="price">₹30</span>
+            </div>
+
         </div>
-
-        <div class="menu-item">
-            <span class="item-name">Cheese Pav Bhaji</span>
-            <span class="price">₹120</span>
-        </div>
-
-        <div class="menu-item">
-            <span class="item-name">Vada Pav</span>
-            <span class="price">₹25</span>
-        </div>
-
-        <div class="menu-item">
-            <span class="item-name">Dabeli</span>
-            <span class="price">₹30</span>
-        </div>
-
     </div>
 
     <!-- Beverages -->
 
-    <div class="category">
+    <div class="accordion">
 
-        <h2>🥤 Beverages</h2>
+        <button class="accordion-header">
+            <span>🥤 Beverages</span>
+            <span class="arrow">▼</span>
+        </button>
 
-        <div class="menu-item">
-            <span class="item-name">Cold Drink</span>
-            <span class="price">₹20</span>
-        </div>
+        <div class="accordion-content">
 
-        <div class="menu-item">
-            <span class="item-name">Mineral Water</span>
-            <span class="price">₹20</span>
+            <div class="menu-item">
+                <span class="item-name">Cold Drink</span>
+                <span class="price">₹20</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Mineral Water</span>
+                <span class="price">₹20</span>
+            </div>
+
         </div>
 
     </div>
-
     <!-- Footer -->
 
     <div class="footer">
