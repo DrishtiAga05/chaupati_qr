@@ -302,12 +302,51 @@ body{
 
 <script>
 
+const accordions =
+document.querySelectorAll('.accordion');
 
-console.log("Script is running");
+accordions.forEach(acc => {
 
-const accordions = document.querySelectorAll('.accordion');
+    const header =
+    acc.querySelector('.accordion-header');
 
-console.log("Accordions found:", accordions.length);
+    const content =
+    acc.querySelector('.accordion-content');
+
+    header.addEventListener('click', () => {
+
+        document
+            .querySelectorAll('.accordion')
+            .forEach(other => {
+
+                if(other !== acc){
+
+                    other.classList.remove('active');
+
+                    other.querySelector(
+                        '.accordion-content'
+                    ).style.maxHeight = null;
+
+                }
+
+            });
+
+        acc.classList.toggle('active');
+
+        if(acc.classList.contains('active')){
+
+            content.style.maxHeight =
+                content.scrollHeight + 'px';
+
+        }else{
+
+            content.style.maxHeight = null;
+
+        }
+
+    });
+
+});
 
 </script>
 
