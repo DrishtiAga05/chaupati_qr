@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madras Cafe | Gulabi Chowk</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.88),
+            rgba(255,255,255,0.88)
+        ),
+        url('background.jpeg');
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    padding:20px;
+}
+
+/* Main Container */
+
+.container{
+    max-width:700px;
+    margin:auto;
+}
+
+/* Top Header */
+
+.top-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:25px;
+    padding:0 10px;
+}
+
+.gulabi-logo{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+}
+
+.choice-section{
+    text-align:center;
+    position:relative;
+    transform: translateX(30px);
+}
+
+.chatokda-logo{
+    width:110px;
+    height:110px;
+    object-fit:contain;
+}
+
+.chatokda-text{
+    margin-top:4px;
+    font-size:14px;
+    font-weight:700;
+    color:#444;
+    text-align:center;
+}
+
+/* Stall Title */
+
+.stall-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+
+.stall-title h1{
+    color:#c2185b;
+
+    font-size:3.2rem;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,0.15);
+
+    margin-top:10px;
+}
+
+/* Categories */
+
+.accordion{
+    margin-top:15px;
+}
+
+.accordion-header{
+    width:100%;
+
+    background:rgba(255,255,255,0.95);
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:15px 18px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    cursor:pointer;
+
+    font-size:1.2rem;
+    font-weight:bold;
+
+    color:#e91e63;
+
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.accordion-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.35s ease;
+}
+
+.arrow{
+    transition:transform 0.35s ease;
+}
+
+.accordion.active .arrow{
+    transform:rotate(180deg);
+}
+
+/* Menu Cards */
+
+.menu-item{
+    background:rgba(255,255,255,0.92);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 18px;
+    margin-bottom:10px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    border-left:5px solid #e91e63;
+}
+
+.item-name{
+    font-weight:600;
+}
+
+.price{
+    color:#e91e63;
+    font-weight:bold;
+}
+
+.instagram-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.instagram-section img {
+    width: 140px;
+    height: 140px;
+}
+
+/* Footer */
+
+.footer{
+    margin-top:20px;
+    text-align:center;
+    color:#666;
+    font-size:14px;
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .gulabi-logo,
+    .chatokda-logo{
+        width:70px;
+        height:70px;
+    }
+
+    .stall-title h1{
+        font-size:1.9rem;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+< class="container">
+
+    <!-- Top Logos -->
+
+    <div class="top-bar">
+
+        <img src="gulabi-logo.jpeg"
+             alt="Gulabi Chowk"
+             class="gulabi-logo">
+
+        <div class="choice-section">
+
+            <img src="chatokda-logo.jpeg"
+                 alt="Chatokda"
+                 class="chatokda-logo">
+
+            <div class="chatokda-text">
+                     Chatokda's Choice
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Stall Name -->
+
+    <div class="stall-title">
+        <h1>MADRAS CAFE</h1>
+    </div>
+
+    <div class="menu-item">
+        <span class="item-name">Masala Dosa</span>
+        <span class="price">₹120</span>
+    </div>
+
+    <div class="menu-item">
+        <span class="item-name">Plain Dosa</span>
+        <span class="price">₹100</span>
+    </div>
+
+    <div class="menu-item">
+        <span class="item-name">Mysore Dosa</span>
+        <span class="price">₹130</span>
+    </div>
+
+    <div class="menu-item">
+        <span class="item-name">Idli Sambar</span>
+        <span class="price">₹80</span>
+    </div>
+
+    <div class="menu-item">
+        <span class="item-name">Vada Sambar</span>
+        <span class="price">₹90</span>
+    </div>
+
+    <div class="menu-item">
+        <span class="item-name">Uttapam</span>
+        <span class="price">₹140</span>
+    </div>
+
+
+        <!-- Instagram Section -->
+    <div class="instagram-section" style="text-align:center; margin:20px 0;">
+
+        <p style="margin-bottom:10px; font-weight:600;">
+            Follow us on Instagram!
+        </p>
+
+        <!-- QR Code -->
+        <img src="instagram-qr.jpeg"
+            alt="Instagram QR"
+            style="width:140px; height:140px;">
+
+        <!-- Link -->
+        <p style="margin-top:10px;">
+            <a href="https://www.instagram.com/gulabichowkjaipur?igsh=MTVmeHoydGtjaDh5Ng=="
+            target="_blank">
+                Open Instagram Page
+            </a>
+        </p>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        Thank you for visiting Gulabi Chowk ❤️
+    </div>
+
+</div>
+
+<script>
+
+const accordions =
+document.querySelectorAll('.accordion');
+
+accordions.forEach(acc => {
+
+    const header =
+    acc.querySelector('.accordion-header');
+
+    const content =
+    acc.querySelector('.accordion-content');
+
+    header.addEventListener('click', () => {
+
+        document
+            .querySelectorAll('.accordion')
+            .forEach(other => {
+
+                if(other !== acc){
+
+                    other.classList.remove('active');
+
+                    other.querySelector(
+                        '.accordion-content'
+                    ).style.maxHeight = null;
+
+                }
+
+            });
+
+        acc.classList.toggle('active');
+
+        if(acc.classList.contains('active')){
+
+            content.style.maxHeight =
+                content.scrollHeight + 'px';
+
+        }else{
+
+            content.style.maxHeight = null;
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
