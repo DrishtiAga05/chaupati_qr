@@ -236,6 +236,9 @@ body{
     <div class="menu-item">
         <span class="item-name">Veg Noodles</span>
         <span class="price">₹70</span>
+         <button onclick="addToCart('Veg Noodles',70)">
+            Add
+        </button>
     </div>
 
     <div class="menu-item">
@@ -340,6 +343,25 @@ accordions.forEach(acc => {
     });
 
 });
+
+function addToCart(name, price){
+
+    let cart =
+    JSON.parse(localStorage.getItem("cart"))
+    || [];
+
+    cart.push({
+        name: name,
+        price: price
+    });
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    alert(name + " added to cart!");
+}
 
 </script>
 
