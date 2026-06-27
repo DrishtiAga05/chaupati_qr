@@ -146,7 +146,6 @@ body{
 .menu-item{
     background:rgba(255,255,255,0.92);
     display:flex;
-    justify-content:space-between;
     align-items:center;
     padding:14px 18px;
     margin-bottom:10px;
@@ -156,12 +155,56 @@ body{
 }
 
 .item-name{
+    flex: 1;
     font-weight:600;
 }
 
 .price{
     color:#e91e63;
     font-weight:bold;
+    margin-right: 15px;
+}
+
+.cart-section{
+    width:90px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.add-btn{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:2px solid #e91e63;
+    background:white;
+    color:#e91e63;
+    font-size:24px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.qty-box{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.qty-box button{
+    width:28px;
+    height:28px;
+    border:none;
+    border-radius:50%;
+    background:#e91e63;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.qty{
+    font-weight:bold;
+    min-width:18px;
+    text-align:center;
 }
 
 .instagram-section {
@@ -236,36 +279,86 @@ body{
     <div class="menu-item">
         <span class="item-name">Veg Noodles</span>
         <span class="price">₹70</span>
-         <button onclick="addToCart('Veg Noodles',70)">
-            Add
-        </button>
+        <div class="cart-section">
+            <button class="add-btn" onclick="addItem(this)">+</button>
+
+            <div class="qty-box" style="display:none;">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">1</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+        </div>
     </div>
 
     <div class="menu-item">
         <span class="item-name">Hakka Noodles</span>
         <span class="price">₹80</span>
+        <div class="cart-section">
+            <button class="add-btn" onclick="addItem(this)">+</button>
+
+            <div class="qty-box" style="display:none;">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">1</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+        </div>
     </div>
 
     <div class="menu-item">
         <span class="item-name">Fried Rice</span>
         <span class="price">₹70</span>
+        <div class="cart-section">
+            <button class="add-btn" onclick="addItem(this)">+</button>
+
+            <div class="qty-box" style="display:none;">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">1</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+        </div>
     </div>
 
     <div class="menu-item">
         <span class="item-name">Momos</span>
         <span class="price">₹80</span>
+        <div class="cart-section">
+            <button class="add-btn" onclick="addItem(this)">+</button>
+
+            <div class="qty-box" style="display:none;">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">1</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+        </div>
     </div>
 
     <div class="menu-item">
         <span class="item-name">Spring Roll</span>
         <span class="price">₹90</span>
+        <div class="cart-section">
+            <button class="add-btn" onclick="addItem(this)">+</button>
+
+            <div class="qty-box" style="display:none;">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">1</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+        </div>
     </div>
 
     <div class="menu-item">
         <span class="item-name">Manchurian</span>
         <span class="price">₹70</span>
-    </div>
+        <div class="cart-section">
+            <button class="add-btn" onclick="addItem(this)">+</button>
 
+            <div class="qty-box" style="display:none;">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">1</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+        </div>
+    </div>
 
         <!-- Instagram Section -->
     <div class="instagram-section" style="text-align:center; margin:20px 0;">
@@ -363,6 +456,31 @@ function addToCart(name, price){
     alert(name + " added to cart!");
 }
 
+</script>
+
+<script>
+function addItem(btn){
+    btn.style.display = "none";
+
+    const qtyBox = btn.nextElementSibling;
+    qtyBox.style.display = "flex";
+}
+
+function changeQty(btn, change){
+    const qtySpan =
+        btn.parentElement.querySelector(".qty");
+
+    let qty = parseInt(qtySpan.innerText);
+    qty += change;
+
+    if(qty <= 0){
+        btn.parentElement.style.display = "none";
+        btn.parentElement.previousElementSibling.style.display = "block";
+        return;
+    }
+
+    qtySpan.innerText = qty;
+}
 </script>
 
 </body>
